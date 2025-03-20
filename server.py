@@ -7,6 +7,7 @@
 import time
 import zmq
 
+
 context = zmq.Context()
 socket = context.socket(zmq.REP)    # Create REP (Reply) socket
 socket.bind("tcp://*:5555") # Wait at port 5555
