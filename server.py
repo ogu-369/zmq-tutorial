@@ -14,13 +14,21 @@ socket.bind("tcp://*:5555") # Wait at port 5555
 
 print("Server is running...")
 
-while True:
-    # Wait for next request from client
-    message = socket.recv()
-    print(f"Received requst: {message}")
+try:
+    while True:
+        # Wait for next request from client
+        message = socket.recv()
+        print(f"Received requst: {message}")
 
-    # Do some 'work'
-    time.sleep(1)
+        # Do some 'work'
+        time.sleep(1)
 
-    # Send reply back to client
-    socket.send(b"World")
+        # Send reply back to client
+        socket.send(b"World")
+except KeyboardInterrupt:
+    print("\nServer shutting down...")
+
+finally:
+    socket.close()
+    context.term()
+    print("Server stopped.")

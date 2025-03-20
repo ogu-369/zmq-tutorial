@@ -20,5 +20,5 @@ for request in range(10):
     socket.send(b"Hello")
 
     # Get the reply
-    message = socket.recv()
-    print(f"Received reply {request} [ {message} ]")
+    recv_message = socket.recv()
+    print(f"Received reply {request} [ {recv_message} ]")
