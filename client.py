@@ -7,7 +7,7 @@
 import zmq
 
 
-context = zmq.context()
+context = zmq.Context()
 
 # Socket to talk to server
 print("Connecting to hello world server...")
